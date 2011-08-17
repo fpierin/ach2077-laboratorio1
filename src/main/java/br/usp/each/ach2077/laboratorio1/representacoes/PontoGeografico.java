@@ -67,5 +67,12 @@ public class PontoGeografico implements Serializable {
 	public void setSegundos(final int segundos) {
 		this.segundos = segundos;
 	}
+
+	@Override
+	public String toString() {
+		return "PontoGeografico [IdPonto=" + IdPonto + ", NomePonto="
+				+ NomePonto + ", graus=" + graus + ", minutos=" + minutos
+				+ ", segundos=" + segundos + "]";
+	}
 	
 }
