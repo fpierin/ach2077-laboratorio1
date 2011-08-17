@@ -2,27 +2,13 @@ package br.usp.each.ach2077.laboratorio1.representacoes;
 
 import java.io.Serializable;
 
-import org.hibernate.annotations.Entity;
-
-//
-//create table Ponto_Geografico (
-//	     IdPonto numeric(6) not null,
-//	     NomePonto varchar(100) not null,
-//	     graus numeric(5,2),
-//	     minutos numeric(5,2),
-//	     segundos numeric(5,2),
-//	     constraint IDPonto_Geografico primary key (IdPonto));
-
-
-
-@Entity
 public class PontoGeografico implements Serializable {
 
 	private static final long serialVersionUID = 6006551901840371339L;
 	
-	private int id;
+	private int IdPonto;
 	
-	private String nome;
+	private String NomePonto;
 	
 	private int graus;
 	
@@ -31,36 +17,38 @@ public class PontoGeografico implements Serializable {
 	private int segundos;
 	
 	public PontoGeografico() {}
-	
-	public PontoGeografico(int id, String nome, int graus, int minutos, int segundos) {
-		this.id = id;
-		this.nome = nome;
+
+	public PontoGeografico(final int idPonto, final String nomePonto, final int graus,
+			final int minutos, final int segundos) {
+		super();
+		this.IdPonto = idPonto;
+		this.NomePonto = nomePonto;
 		this.graus = graus;
 		this.minutos = minutos;
 		this.segundos = segundos;
-	}	
-
-	public int getId() {
-		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public int getIdPonto() {
+		return IdPonto;
 	}
 
-	public String getNome() {
-		return nome;
+	public void setIdPonto(final int idPonto) {
+		IdPonto = idPonto;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String getNomePonto() {
+		return NomePonto;
+	}
+
+	public void setNomePonto(final String nomePonto) {
+		NomePonto = nomePonto;
 	}
 
 	public int getGraus() {
 		return graus;
 	}
 
-	public void setGraus(int graus) {
+	public void setGraus(final int graus) {
 		this.graus = graus;
 	}
 
@@ -68,7 +56,7 @@ public class PontoGeografico implements Serializable {
 		return minutos;
 	}
 
-	public void setMinutos(int minutos) {
+	public void setMinutos(final int minutos) {
 		this.minutos = minutos;
 	}
 
@@ -76,7 +64,7 @@ public class PontoGeografico implements Serializable {
 		return segundos;
 	}
 
-	public void setSegundos(int segundos) {
+	public void setSegundos(final int segundos) {
 		this.segundos = segundos;
 	}
 	
