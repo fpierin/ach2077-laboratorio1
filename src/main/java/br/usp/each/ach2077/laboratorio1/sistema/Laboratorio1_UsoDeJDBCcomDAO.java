@@ -12,6 +12,11 @@ public class Laboratorio1_UsoDeJDBCcomDAO {
 	
 	public static void main(final String[] args) {
 		
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (final Exception e) {
+			throw new RuntimeException(e);
+		}
 		
 		final Connection connection = new ConnectionFactory().getConnection();
 		final DAOGenerico<PontoGeografico> dao = new PontoGeograficoDAO(connection);
@@ -24,8 +29,8 @@ public class Laboratorio1_UsoDeJDBCcomDAO {
 		dao.salva(pontoGeografico2);
 		dao.salva(pontoGeografico3);
 		
-		List<PontoGeografico> pontoGeofraficos = dao.lista();
-		for (PontoGeografico pontoGeografico: pontoGeofraficos){
+		final List<PontoGeografico> pontoGeofraficos = dao.lista();
+		for (final PontoGeografico pontoGeografico: pontoGeofraficos){
 			System.out.println(pontoGeografico);
 		}
 		
